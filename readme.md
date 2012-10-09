@@ -4,10 +4,14 @@
 
 ### Requirements
 [Python 2.x](http://python.org)
+
 [Django](https://www.djangoproject.com/)
+
 [APScheduler](http://packages.python.org/APScheduler/)
+
 [PySNMP](http://pysnmp.sourceforge.net/)
-[CherryPy](http://www.cherrypy.org/) - (if using built in webserver)
+
+[CherryPy](http://www.cherrypy.org/) (if using built in webserver)
 
 ### Installation
 * Install requirements.
@@ -21,12 +25,10 @@
 * You can edit or delete existing events in the future
 * The receiver will change to the selected schedule at the specified time
 
-
 ### Limitations
 * Jobs are added to the jobstore using a polling mechanism, so there may be up to a 10 second delay between the time a job is added in the UI and it is actually scheduled
 * Job execution time is only as accurate as the clock on the system running dispatcher.py
 * There is currently no authentication mechanism
 
 ### License
-
 This is open-sourced software licensed under the MIT License.

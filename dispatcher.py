@@ -175,7 +175,7 @@ def update_job(row):
                 sched.add_date_job(change_it, datetime.strptime(row[1], '%Y-%m-%d %H:%M:%S'), args=[row[2], row[3]], name=row[0], jobstore='shelve')
                 set_status(row[0], 1)
             except:
-                status_status(row[0], 4)
+                set_status(row[0], 4)
         #todo - if we didn't find the job for some reason go ahead and add it again?
         
 #event listener          
@@ -204,7 +204,7 @@ process_events()
 # Process events list every 10 seconds
 sched.add_interval_job(process_events, seconds=10)
 
-# Remove completed events from db every five minutes
+# Remove completed events from db every minute
 sched.add_interval_job(remove_events, minutes=1)
 
 print "Dispatcher started..."
