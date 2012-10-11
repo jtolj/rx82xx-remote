@@ -165,7 +165,6 @@ def remove_job(id):
 
 #update an event by name (delete and re-create)
 def update_job(row):
-    print "Updated job #" + str(row[0])
     jobs = sched.get_jobs()
     for job in jobs:
         if (job.name == row[0]):
@@ -174,8 +173,10 @@ def update_job(row):
             try:
                 sched.add_date_job(change_it, datetime.strptime(row[1], '%Y-%m-%d %H:%M:%S'), args=[row[2], row[3]], name=row[0], jobstore='shelve')
                 set_status(row[0], 1)
+                print "Updated job #" + str(row[0])
             except:
                 set_status(row[0], 4)
+                print "Error updating job #" + str(row[0])
         #todo - if we didn't find the job for some reason go ahead and add it again?
         
 #event listener          
