@@ -1,3 +1,6 @@
+# David Bennett
+# http://dbinit.com/blog/easy-django-on-windows-with-cherrypy/
+
 import os
 import socket
 import urllib
